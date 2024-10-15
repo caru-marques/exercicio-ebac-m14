@@ -12,6 +12,11 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('Start Server') {
+            steps {
+                sh 'npm run start'
+            }
+        }
         stage('Test') {
             steps {
                 sh 'NO_COLOR=1 npm run cy:run'
